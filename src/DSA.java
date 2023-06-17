@@ -21,20 +21,57 @@ public class DSA
 
 //		System.out.println(obj.findMin(arr));
 //		System.out.println(obj.findMinStream(arr));
+//		
+//		
+//		int[][] twoDimensionalArray = new int[][]
+//				{
+//						{1,4,5,17},
+//						{2,5,6,7},
+//						{34,23,12,-1}				
+//				};
+//		int[] position = obj.findNumIn2DimArray(twoDimensionalArray,23);
+//		System.out.println(Arrays.toString(position));
 		
-		int[][] twoDimensionalArray = new int[][]
-				{
-						{1,4,5,17},
-						{2,5,6,7},
-						{34,23,12,-1}				
-				};
-		int[] position = obj.findNumIn2DimArray(twoDimensionalArray,23);
-		System.out.println(Arrays.toString(position));
-		
+		int number =-35;
+		System.out.println(obj.countNumberOfDigits(number));
+		System.out.println(obj.countNumberOfDigitsUsingLog(number));
 		
 	}
 	
-	
+	private int countNumberOfDigitsUsingLog(int number)
+	{
+		if(number==0)
+		{
+			return 1;
+		}
+		if(number<0)
+		{
+			number=-1*number;
+		}
+		
+		return (int)(Math.log10(number)+1);
+	}
+	private int countNumberOfDigits(int number)
+	{
+		if(number==0)
+		{
+			return 1;
+		}
+		if(number<0)
+		{
+			number=-1*number;
+		}
+		
+		int digits=0;
+		while(number>0)
+		{
+			number/=10;
+			++digits;
+		}
+		return digits;
+	}
+
+
 	private int[] findNumIn2DimArray(int[][] twoDimensionalArray, int target)
 	{
 		for(int row=0 ; row < twoDimensionalArray.length ; ++row)
