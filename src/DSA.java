@@ -30,6 +30,8 @@ public class DSA
 				};
 		int[] position = obj.findNumIn2DimArray(twoDimensionalArray,23);
 		System.out.println(Arrays.toString(position));
+		
+		
 	}
 	
 	
@@ -46,6 +48,26 @@ public class DSA
 			}
 		}
 		return new int[] {-1,-1};
+	}
+
+
+	private int[] findNumIn2DimArrayStream(int[][] twoDimensionalArray, int target) 
+	{
+	
+	    OptionalInt rowIndex = IntStream.range(0, twoDimensionalArray.length)
+	            .filter(row -> IntStream.of(twoDimensionalArray[row]).anyMatch(value -> value == target))
+	            .findFirst();
+
+	    if (rowIndex.isPresent()) {
+	        int row = rowIndex.getAsInt();
+	        int col = IntStream.range(0, twoDimensionalArray[row].length)
+	                .filter(i -> twoDimensionalArray[row][i] == target)
+	                .findFirst()
+	                .getAsInt();
+	        return new int[]{row, col};
+	    } else {
+	        return new int[]{-1, -1};
+	    }
 	}
 
 
