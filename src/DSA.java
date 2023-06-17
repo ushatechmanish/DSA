@@ -6,7 +6,7 @@ public class DSA
 	{
 		DSA obj = new DSA();
 		int[] arr1 = {18,12,9,14,77,50};
-		int linearSearchResult =obj.linearSearch(new int[] {18,12,9,14,77,50},-1);
+		int linearSearchResult =obj.linearSearch(new int[] {18,12,9,14,77,50},14);
 		System.out.println(linearSearchResult);
 
 	}
@@ -18,14 +18,12 @@ public class DSA
 	{
 		if(arr==null || arr.length==0)
 			return -1;
-		int index=0;
-		for(int num : arr)
+		for(int index=0; index<arr.length ; ++index)
 		{
-			if(num==target)
+			if(arr[index]==target)
 			{
 				return index;
 			}
-			++index;
 		}
 		
 		return -1;
