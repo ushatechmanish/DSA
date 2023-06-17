@@ -6,25 +6,29 @@ public class DSA
 	{
 		DSA obj = new DSA();
 		int[] arr1 = {18,12,9,14,77,50};
-		boolean linearSearchResult =obj.linearSearch(new int[] {18,12,9,14,77,50},14);
+		int linearSearchResult =obj.linearSearch(new int[] {18,12,9,14,77,50},-1);
 		System.out.println(linearSearchResult);
 
 	}
-	
-	public boolean linearSearch(int[] arr,int target)
+	/**
+	 * returns the position of the target 
+	 * if not present returns -1;
+	 * */
+	public int linearSearch(int[] arr,int target)
 	{
 		if(arr==null || arr.length==0)
-			return false;
-		
+			return -1;
+		int index=0;
 		for(int num : arr)
 		{
 			if(num==target)
 			{
-				return true;
+				return index;
 			}
+			++index;
 		}
 		
-		return false;
+		return -1;
 	}
 
 }
