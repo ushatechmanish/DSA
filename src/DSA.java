@@ -35,7 +35,7 @@ public class DSA
 		int number =-35;
 		System.out.println(obj.countNumberOfDigits(number));
 		System.out.println(obj.countNumberOfDigitsUsingLog(number));
-		
+		// completed the linear search 
 	}
 	
 	private int countNumberOfDigitsUsingLog(int number)
