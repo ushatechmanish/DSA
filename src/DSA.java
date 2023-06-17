@@ -19,10 +19,35 @@ public class DSA
 //		
 //		System.out.println(obj.linearSearchStreamWithoutBoxing(arr,14,2,5));
 
-		System.out.println(obj.findMin(arr));
-		System.out.println(obj.findMinStream(arr));
+//		System.out.println(obj.findMin(arr));
+//		System.out.println(obj.findMinStream(arr));
+		
+		int[][] twoDimensionalArray = new int[][]
+				{
+						{1,4,5,17},
+						{2,5,6,7},
+						{34,23,12,-1}				
+				};
+		int[] position = obj.findNumIn2DimArray(twoDimensionalArray,23);
+		System.out.println(Arrays.toString(position));
 	}
 	
+	
+	private int[] findNumIn2DimArray(int[][] twoDimensionalArray, int target)
+	{
+		for(int row=0 ; row < twoDimensionalArray.length ; ++row)
+		{
+			for(int col=0; col<twoDimensionalArray[row].length ;++col )
+			{
+				if(twoDimensionalArray[row][col]==target)
+				{
+					return new int[] {row,col};
+				}
+			}
+		}
+		return new int[] {-1,-1};
+	}
+
 
 	private int findMin(int[] arr)
 	{
