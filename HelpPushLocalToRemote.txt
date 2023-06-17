@@ -1,0 +1,11 @@
+cd C:\springboot\DSA
+git remote add origin https://github.com/ushatechmanish/DSA.git
+git branch --set-upstream-to=origin/main main
+git pull origin main --allow-unrelated-histories
+
+Resolve the conflicts 
+notepad .gitignore
+git add .
+git commit -m "resolved conflict in .gitignore"
+
+git push origin main
