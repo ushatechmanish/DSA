@@ -45,10 +45,33 @@ public class BST
 		return node;
 		
 	}
-	public boolean isBalanced(TreeNode node)
+	private boolean isBalanced(TreeNode node)
 	{
+		if(node==null) return true;
 		return Math.abs(height(node.left)-height(node.right))<=1 && isBalanced(node.left) && isBalanced(node.right);
 	}
+	public boolean isBalanced()
+	{
+		return isBalanced(root);
+	}
+	public void prettyDisplay()
+	{
+		prettyDisplay(root,0);
+	}
+	
+	private void prettyDisplay(TreeNode node, int level)
+	{
+		if(node==null) return;
+		prettyDisplay(node.right, level+1);
+		for(int i=0; i<level ; ++i)
+		{
+			System.out.print("\t");
+		}
+		System.out.println(node.value);
+		prettyDisplay(node.left, level+1);
+	}
+
+
 	public void display()
 	{
 		display(root, "Root node");
@@ -68,7 +91,21 @@ public class BST
 
 	public void populate(int[] arr)
 	{
-		
 		Arrays.stream(arr).forEach(num->insert(num));
+	}
+	public void populateSortedArray(int[] arr)
+	{
+		populateSortedArray(arr, 0, arr.length-1);
+	}
+	private void populateSortedArray(int[] arr, int start , int end)
+	{
+		if(!(start<=end))
+		{
+			return;
+		}
+		int mid = start+(end-start)/2;
+		insert(arr[mid]);
+		populateSortedArray(arr, 0, mid-1);
+		populateSortedArray(arr, mid+1, end);		
 	}
 }
