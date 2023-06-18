@@ -3,7 +3,8 @@ public class TreeNode
 {
 	public TreeNode left;
 	public TreeNode right;
-	int value;
+	public int value;
+	public int height;
 	
 	public TreeNode(int value)
 	{

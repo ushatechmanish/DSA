@@ -1,0 +1,42 @@
+Enter the root Node value :
+15
+Do you want to enter the left node value of 15
+true
+Enter the left value of 15
+9
+Do you want to enter the left node value of 9
+false
+Do you want to enter the right node value of 9
+false
+Do you want to enter the right node value of 15
+true
+Enter the right value of 15
+6
+Do you want to enter the left node value of 6
+true
+Enter the left value of 6
+7
+Do you want to enter the left node value of 7
+false
+Do you want to enter the right node value of 7
+false
+Do you want to enter the right node value of 6
+true
+Enter the right value of 6
+8
+Do you want to enter the left node value of 8
+false
+Do you want to enter the right node value of 8
+false
+Binary Tree is as follows
+15
+	9
+	6
+		7
+		8
+Binary Tree pretty display is as follows
+		->>>>>8
+	->>>>>6
+		->>>>>7
+15
+	->>>>>9
