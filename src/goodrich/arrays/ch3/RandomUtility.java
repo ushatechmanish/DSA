@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-public class RandomNumberGenerator
+public class RandomUtility
 {
 	public static void main(String[] args)
 	{
-		RandomNumberGenerator obj = new RandomNumberGenerator();
+		RandomUtility obj = new RandomUtility();
 		Random rand = new Random(50);
 		Random rand2 = new Random(System.currentTimeMillis());
 		// this will always create a new sequence every time program is run
@@ -38,4 +38,18 @@ public class RandomNumberGenerator
 		}
 		return result;
 	}
+
+	public String getRandomMessage()
+	{
+		Random random = new Random();
+		int messageLength = random.nextInt(10);
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < messageLength; ++i)
+		{
+			int randomIndexforChar = random.nextInt(0, 27);
+			result.append((char) ('A' + randomIndexforChar));
+		}
+		return result.toString();
+	}
+
 }
