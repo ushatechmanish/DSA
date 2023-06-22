@@ -15,6 +15,7 @@ import goodrich.arrays.ch3.GameEntry;
 import goodrich.arrays.ch3.InsertionSort;
 import goodrich.arrays.ch3.RandomUtility;
 import goodrich.arrays.ch3.Scoreboard;
+import sort.BubbleSort;
 
 public class UnitTests
 {
@@ -23,6 +24,7 @@ public class UnitTests
 	InsertionSort insertionSort;
 	CaesarCipher cipher;
 	Random random;
+	BubbleSort bubbleSort;
 	int rotation;
 	int[] emptyArr =
 	{};
@@ -42,6 +44,7 @@ public class UnitTests
 		random = new Random();
 		rotation = random.nextInt(0, 10);
 		cipher = new CaesarCipher(rotation);
+		bubbleSort = new BubbleSort();
 	}
 
 	@Test
@@ -68,6 +71,19 @@ public class UnitTests
 		assertEquals("[1]", Arrays.toString(insertionSort.sortAscending1(new int[]
 		{ 1 })));
 		assertEquals("[1, 1, 2, 3, 3, 4, 5]", Arrays.toString(insertionSort.sortAscending1(new int[]
+		{ 1, 3, 4, 5, 1, 2, 3 })));
+	}
+
+	@Test
+	public void testBubbleSort()
+	{
+		assertEquals("[1, 2]", Arrays.toString(bubbleSort.sortAscending1(new int[]
+		{ 2, 1 })));
+		assertEquals("[]", Arrays.toString(bubbleSort.sortAscending1(new int[]
+		{})));
+		assertEquals("[1]", Arrays.toString(bubbleSort.sortAscending1(new int[]
+		{ 1 })));
+		assertEquals("[1, 1, 2, 3, 3, 4, 5]", Arrays.toString(bubbleSort.sortAscending1(new int[]
 		{ 1, 3, 4, 5, 1, 2, 3 })));
 	}
 
