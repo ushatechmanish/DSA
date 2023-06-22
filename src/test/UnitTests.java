@@ -48,6 +48,15 @@ public class UnitTests
 	}
 
 	@Test
+	public void testBinarySearchAlgo()
+	{
+
+		assertEquals(Arrays.binarySearch(new int[]
+		{ 2, 3, 6 }, 5), binarySearch.search(new int[]
+		{ 2, 3, 6 }, 5));
+	}
+
+	@Test
 	public void testGameEntry()
 	{
 		Scoreboard board = new Scoreboard(4);
