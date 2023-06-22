@@ -46,7 +46,7 @@ public class RandomUtility
 		StringBuilder result = new StringBuilder();
 		for (int i = 0; i < messageLength; ++i)
 		{
-			int randomIndexforChar = random.nextInt(0, 27);
+			int randomIndexforChar = random.nextInt(0, 26);
 			result.append((char) ('A' + randomIndexforChar));
 		}
 		return result.toString();

@@ -26,14 +26,10 @@ public class UnitTests
 	Random random;
 	BubbleSort bubbleSort;
 	int rotation;
-	int[] emptyArr =
-	{};
-	int[] arr2 =
-	{ 1, 4, 7, 9, 20 };
-	int[] arr3 =
-	{ 1, 4, 7, 9, 20 };
-	int[] arr4 =
-	{ 1, 4, 7, 9, 20 };
+	int[] emptyArr = {};
+	int[] arr2 = { 1, 4, 7, 9, 20 };
+	int[] arr3 = { 1, 4, 7, 9, 20 };
+	int[] arr4 = { 1, 4, 7, 9, 20 };
 
 	@BeforeEach
 	public void setup()
@@ -51,9 +47,9 @@ public class UnitTests
 	public void testBinarySearchAlgo()
 	{
 
-		assertEquals(Arrays.binarySearch(new int[]
-		{ 2, 3, 6 }, 5), binarySearch.search(new int[]
-		{ 2, 3, 6 }, 5));
+		assertEquals(Arrays.binarySearch(new int[] { 2, 3, 6 }, 5), binarySearch.search(new int[] { 2, 3, 6 }, 5));
+
+		assertEquals(-2, binarySearch.search(new int[] { 6, 3, 2 }, 5));
 	}
 
 	@Test
@@ -73,70 +69,53 @@ public class UnitTests
 	@Test
 	public void testInsertionSort()
 	{
-		assertEquals("[1, 2]", Arrays.toString(insertionSort.sortAscending1(new int[]
-		{ 2, 1 })));
-		assertEquals("[]", Arrays.toString(insertionSort.sortAscending1(new int[]
-		{})));
-		assertEquals("[1]", Arrays.toString(insertionSort.sortAscending1(new int[]
-		{ 1 })));
-		assertEquals("[1, 1, 2, 3, 3, 4, 5]", Arrays.toString(insertionSort.sortAscending1(new int[]
-		{ 1, 3, 4, 5, 1, 2, 3 })));
+		assertEquals("[1, 2]", Arrays.toString(insertionSort.sortAscending1(new int[] { 2, 1 })));
+		assertEquals("[]", Arrays.toString(insertionSort.sortAscending1(new int[] {})));
+		assertEquals("[1]", Arrays.toString(insertionSort.sortAscending1(new int[] { 1 })));
+		assertEquals("[1, 1, 2, 3, 3, 4, 5]",
+				Arrays.toString(insertionSort.sortAscending1(new int[] { 1, 3, 4, 5, 1, 2, 3 })));
 	}
 
 	@Test
 	public void testBubbleSort()
 	{
-		assertEquals("[1, 2]", Arrays.toString(bubbleSort.sortAscending1(new int[]
-		{ 2, 1 })));
-		assertEquals("[]", Arrays.toString(bubbleSort.sortAscending1(new int[]
-		{})));
-		assertEquals("[1]", Arrays.toString(bubbleSort.sortAscending1(new int[]
-		{ 1 })));
-		assertEquals("[1, 1, 2, 3, 3, 4, 5]", Arrays.toString(bubbleSort.sortAscending1(new int[]
-		{ 1, 3, 4, 5, 1, 2, 3 })));
+		assertEquals("[1, 2]", Arrays.toString(bubbleSort.sortAscending1(new int[] { 2, 1 })));
+		assertEquals("[]", Arrays.toString(bubbleSort.sortAscending1(new int[] {})));
+		assertEquals("[1]", Arrays.toString(bubbleSort.sortAscending1(new int[] { 1 })));
+		assertEquals("[1, 1, 2, 3, 3, 4, 5]",
+				Arrays.toString(bubbleSort.sortAscending1(new int[] { 1, 3, 4, 5, 1, 2, 3 })));
 	}
 
 	@Test
 	public void testInsertionSortNew()
 	{
-		assertEquals("[1, 2]", Arrays.toString(insertionSort.sortAscending2(new int[]
-		{ 2, 1 })));
-		assertEquals("[]", Arrays.toString(insertionSort.sortAscending2(new int[]
-		{})));
-		assertEquals("[1]", Arrays.toString(insertionSort.sortAscending2(new int[]
-		{ 1 })));
-		assertEquals("[1, 1, 2, 3, 3, 4, 5]", Arrays.toString(insertionSort.sortAscending2(new int[]
-		{ 1, 3, 4, 5, 1, 2, 3 })));
+		assertEquals("[1, 2]", Arrays.toString(insertionSort.sortAscending2(new int[] { 2, 1 })));
+		assertEquals("[]", Arrays.toString(insertionSort.sortAscending2(new int[] {})));
+		assertEquals("[1]", Arrays.toString(insertionSort.sortAscending2(new int[] { 1 })));
+		assertEquals("[1, 1, 2, 3, 3, 4, 5]",
+				Arrays.toString(insertionSort.sortAscending2(new int[] { 1, 3, 4, 5, 1, 2, 3 })));
 	}
 
 	@Test
 	public void testInsertionSortDesc1()
 	{
-		assertEquals("[2, 1]", Arrays.toString(insertionSort.sortDescending1(new int[]
-		{ 2, 1 })));
-		assertEquals("[]", Arrays.toString(insertionSort.sortDescending1(new int[]
-		{})));
-		assertEquals("[1]", Arrays.toString(insertionSort.sortDescending1(new int[]
-		{ 1 })));
-		assertEquals("[5, 4, 3, 3, 2, 1, 1]", Arrays.toString(insertionSort.sortDescending1(new int[]
-		{ 1, 3, 4, 5, 1, 2, 3 })));
-		assertEquals("[5, 4, 3]", Arrays.toString(insertionSort.sortDescending1(new int[]
-		{ 3, 4, 5 })));
+		assertEquals("[2, 1]", Arrays.toString(insertionSort.sortDescending1(new int[] { 2, 1 })));
+		assertEquals("[]", Arrays.toString(insertionSort.sortDescending1(new int[] {})));
+		assertEquals("[1]", Arrays.toString(insertionSort.sortDescending1(new int[] { 1 })));
+		assertEquals("[5, 4, 3, 3, 2, 1, 1]",
+				Arrays.toString(insertionSort.sortDescending1(new int[] { 1, 3, 4, 5, 1, 2, 3 })));
+		assertEquals("[5, 4, 3]", Arrays.toString(insertionSort.sortDescending1(new int[] { 3, 4, 5 })));
 	}
 
 	@Test
 	public void testInsertionSortDesc2()
 	{
-		assertEquals("[2, 1]", Arrays.toString(insertionSort.sortDescending2(new int[]
-		{ 2, 1 })));
-		assertEquals("[]", Arrays.toString(insertionSort.sortDescending2(new int[]
-		{})));
-		assertEquals("[1]", Arrays.toString(insertionSort.sortDescending2(new int[]
-		{ 1 })));
-		assertEquals("[5, 4, 3, 3, 2, 1, 1]", Arrays.toString(insertionSort.sortDescending2(new int[]
-		{ 1, 3, 4, 5, 1, 2, 3 })));
-		assertEquals("[5, 4, 3]", Arrays.toString(insertionSort.sortDescending2(new int[]
-		{ 3, 4, 5 })));
+		assertEquals("[2, 1]", Arrays.toString(insertionSort.sortDescending2(new int[] { 2, 1 })));
+		assertEquals("[]", Arrays.toString(insertionSort.sortDescending2(new int[] {})));
+		assertEquals("[1]", Arrays.toString(insertionSort.sortDescending2(new int[] { 1 })));
+		assertEquals("[5, 4, 3, 3, 2, 1, 1]",
+				Arrays.toString(insertionSort.sortDescending2(new int[] { 1, 3, 4, 5, 1, 2, 3 })));
+		assertEquals("[5, 4, 3]", Arrays.toString(insertionSort.sortDescending2(new int[] { 3, 4, 5 })));
 	}
 
 	@Test
