@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import binarysearch.BinarySearch;
+import binarysearch.BinarySearch2DArray;
 import goodrich.arrays.ch3.CaesarCipher;
 import goodrich.arrays.ch3.GameEntry;
 import goodrich.arrays.ch3.InsertionSort;
@@ -20,6 +21,7 @@ import sort.BubbleSort;
 public class UnitTests
 {
 	private BinarySearch binarySearch;
+	private BinarySearch2DArray binarySearch2DArray;
 	RandomUtility randomUtility;
 	InsertionSort insertionSort;
 	CaesarCipher cipher;
@@ -41,6 +43,24 @@ public class UnitTests
 		rotation = random.nextInt(0, 10);
 		cipher = new CaesarCipher(rotation);
 		bubbleSort = new BubbleSort();
+		binarySearch2DArray = new BinarySearch2DArray();
+	}
+
+	@Test
+	public void testBinarySearch2DArray()
+	{
+		int[][] arr = { { 10, 20, 30, 40 }, { 15, 25, 35, 45 }, { 28, 29, 37, 49 }, { 33, 34, 38, 50 } };
+		assertEquals("[1, 0]", Arrays.toString(binarySearch2DArray.binarySearchOrdered(arr, 15)));
+		int[][] sortedArray = { { 2, 3, 4, 5 }, { 7, 8, 10, 13 }, { 14, 17, 19, 21 }, { 24, 25, 27, 30 } };
+		assertEquals("[1, 1]", Arrays.toString(binarySearch2DArray.searchSortedArray(sortedArray, 8)));
+
+	}
+
+	@Test
+	public void testSearch2DArray()
+	{
+		int[][] arr = new int[][] { { 18, 9, 12 }, { 36, -4, 91 }, { 44, 33, 16 } };
+		assertEquals("[2, 1]", Arrays.toString(binarySearch2DArray.simpleSearch(arr, 33)));
 	}
 
 	@Test
@@ -50,6 +70,7 @@ public class UnitTests
 		assertEquals(Arrays.binarySearch(new int[] { 2, 3, 6 }, 5), binarySearch.search(new int[] { 2, 3, 6 }, 5));
 
 		assertEquals(-2, binarySearch.search(new int[] { 6, 3, 2 }, 5));
+
 	}
 
 	@Test
