@@ -54,6 +54,10 @@ public class BinarySearch2DArray
 //	{14, 17, 19, 21},
 //	{24, 25, 27, 30}
 //	};
+
+	// idea is to reduce first number of rows to 2 . Then we do a binary search for
+	// 2 rows
+
 	public int[] searchSortedArray(int[][] matrix, int target)
 	{
 		int rows = matrix.length;

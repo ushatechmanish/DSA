@@ -17,6 +17,8 @@ import goodrich.arrays.ch3.InsertionSort;
 import goodrich.arrays.ch3.RandomUtility;
 import goodrich.arrays.ch3.Scoreboard;
 import sort.BubbleSort;
+import sort.CycleSort;
+import sort.SelectionSort;
 
 public class UnitTests
 {
@@ -27,6 +29,8 @@ public class UnitTests
 	CaesarCipher cipher;
 	Random random;
 	BubbleSort bubbleSort;
+	SelectionSort selectionSort;
+	CycleSort cycleSort;
 	int rotation;
 	int[] emptyArr = {};
 	int[] arr2 = { 1, 4, 7, 9, 20 };
@@ -44,6 +48,30 @@ public class UnitTests
 		cipher = new CaesarCipher(rotation);
 		bubbleSort = new BubbleSort();
 		binarySearch2DArray = new BinarySearch2DArray();
+		selectionSort = new SelectionSort();
+		cycleSort = new CycleSort();
+
+	}
+
+	@Test
+	public void testSelectionSort()
+	{
+		int[] arr = { 20, 10, 3, 40 };
+		selectionSort.sort(arr);
+		assertEquals("[3, 10, 20, 40]", Arrays.toString(arr));
+
+	}
+
+	@Test
+	public void testCycleSort()
+	{
+		int[] arr = { 1, 4, 2, 3 };
+		cycleSort.sort1ToN(arr);
+		assertEquals("[1, 2, 3, 4]", Arrays.toString(arr));
+		arr = new int[] { 0, 1, 4, 2, 3 };
+		cycleSort.sort0ToN(arr);
+		assertEquals("[0, 1, 2, 3, 4]", Arrays.toString(arr));
+
 	}
 
 	@Test
