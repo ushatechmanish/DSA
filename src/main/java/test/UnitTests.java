@@ -1,24 +1,19 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import binarysearch.BinarySearch;
+import binarysearch.BinarySearch2DArray;
+import goodrich.arrays.ch3.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import sort.BubbleSort;
+import sort.CycleSort;
+import sort.SelectionSort;
 
 import java.util.Arrays;
 import java.util.Random;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import binarysearch.BinarySearch;
-import binarysearch.BinarySearch2DArray;
-import goodrich.arrays.ch3.CaesarCipher;
-import goodrich.arrays.ch3.GameEntry;
-import goodrich.arrays.ch3.InsertionSort;
-import goodrich.arrays.ch3.RandomUtility;
-import goodrich.arrays.ch3.Scoreboard;
-import sort.BubbleSort;
-import sort.CycleSort;
-import sort.SelectionSort;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class UnitTests
 {
